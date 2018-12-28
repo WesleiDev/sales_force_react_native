@@ -35,10 +35,8 @@ export default class ListSalesComponent extends Component{
                 <Right>
                     <Text note> { sale.date } </Text>
                 </Right>
-            </ListItem>
-            
+            </ListItem>            
         )
-
     }
 
     editar(sale){

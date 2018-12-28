@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Content, Text } from 'native-base';
+import { Container, Text, Tab, Tabs, TabHeading, Icon } from 'native-base';
+import  GeralEditSales  from '../Sale/GeralEditSales';
+import ItemSalesEdit from '../Sale/ItemSalesEdit';
 
 class EditSalesScreen extends Component{
 
@@ -10,9 +12,15 @@ class EditSalesScreen extends Component{
     render(){
         return(
             <Container>
-                <Content>
-                    <Text>Edit Sales</Text>
-                </Content>
+                <Tabs >
+                    <Tab 
+                        heading={ <TabHeading><Icon name="apps" /><Text>Geral</Text></TabHeading>}>
+                    <GeralEditSales/>
+                    </Tab>
+                    <Tab heading={ <TabHeading><Icon name="cart" /><Text>Produtos</Text></TabHeading>}>
+                        <ItemSalesEdit/>
+                    </Tab>
+                </Tabs>
             </Container>
         )
     }
