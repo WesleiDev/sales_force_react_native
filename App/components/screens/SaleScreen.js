@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import  ListSalesComponent  from '../ListSales';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import {Container, Header, Content, List } from 'native-base'; 
-
+import  ListSalesComponent  from '../Sale/ListSales';
+import {Container,  Content } from 'native-base'; 
 
 class SaleScreen extends Component{
 
@@ -15,24 +13,19 @@ class SaleScreen extends Component{
 
     render(){
         return(      
-            <Container>
-        {/* <Header /> */}
-        <Content>
-        <ListSalesComponent></ListSalesComponent>
-        </Content>
-      </Container>      
+        <Container>
+            <Content>
+                <ListSalesComponent navigation={ this.props.navigation }></ListSalesComponent>
+            </Content>
+        </Container>      
                           
         )
     }
 }
 
-const AppNavigator = createStackNavigator({
-    Sales:{
-        screen:SaleScreen
-    }
-})
 
-export default createAppContainer(AppNavigator);
+
+export default SaleScreen;
 
 
 

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import SaleScreen from './components/screens/SaleScreen';
+import Navigation from './Navigation';
 
-
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
-      <SaleScreen></SaleScreen>
+      <Navigation/>
     );
   }
 }
 
+export default App;

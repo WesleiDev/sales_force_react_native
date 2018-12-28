@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { FlatList, TouchableHighlight, Alert } from 'react-native';
-import { Container, Header, Content, List, 
-    ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';  
-import { ICON_SYNC}  from '../contants';
-
-const ICON_SALES = require('../images/icon_sales.png');
+import { FlatList,  Alert } from 'react-native';
+import { ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';  
+import { ICON_SYNC }  from '../../contants';
 
 export default class ListSalesComponent extends Component{
 
@@ -16,8 +13,8 @@ export default class ListSalesComponent extends Component{
         return(
           <FlatList data={ this.state.sales }
                renderItem = { ({item}) => this.renderItem(item)} 
-          >
-          </FlatList>
+          />
+         
   
         )
     }
@@ -45,7 +42,10 @@ export default class ListSalesComponent extends Component{
     }
 
     editar(sale){
-        Alert.alert('Editar venda')
+        const { navigation } = this.props;
+        navigation.navigate('EditSales')
+        // console.log(this.props)
+        //  Alert.alert('Editar venda')
     }
 }
 
