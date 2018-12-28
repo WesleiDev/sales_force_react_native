@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import  ListSalesComponent  from '../ListSales';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import {Container, Header, Content, List } from 'native-base'; 
 
 
-export default class SaleScreen extends Component{
+class SaleScreen extends Component{
+
+    static navigationOptions = {
+        title: 'Pedidos',
+      };
     constructor(props){
         super(props)
     }
 
     render(){
-        return(            
-            <ListSalesComponent></ListSalesComponent>              
+        return(      
+            <Container>
+        {/* <Header /> */}
+        <Content>
+        <ListSalesComponent></ListSalesComponent>
+        </Content>
+      </Container>      
+                          
         )
     }
-
-
 }
+
+const AppNavigator = createStackNavigator({
+    Sales:{
+        screen:SaleScreen
+    }
+})
+
+export default createAppContainer(AppNavigator);
 
 
 

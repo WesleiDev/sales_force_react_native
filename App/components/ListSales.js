@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, TouchableHighlight, Alert } from 'react-native';
 import { Container, Header, Content, List, 
     ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';  
 import { ICON_SYNC}  from '../contants';
@@ -14,36 +14,38 @@ export default class ListSalesComponent extends Component{
     }
     render(){
         return(
-            <Container>
-        <Header />
-        <Content>
           <FlatList data={ this.state.sales }
                renderItem = { ({item}) => this.renderItem(item)} 
           >
           </FlatList>
-        </Content>
-      </Container>
+  
         )
     }
 
     renderItem(sale){
         let icon_sync = (sale.sync) ? ICON_SYNC.SYNC : ICON_SYNC.DESYNC;
         return(
-            <ListItem avatar>
-            <Left>
-              <Thumbnail source={icon_sync} />
-            </Left>
-            <Body>
-              <Text>{ sale.name }</Text>
-              <Text note> { sale.payment } </Text>
-              <Text note> { sale.price } </Text>
-            </Body>
-            <Right>
-              <Text note> { sale.date } </Text>
-            </Right>
-        </ListItem>
+            <ListItem avatar
+            onPress={ () => this.editar(sale)  }>
+                <Left>
+                    <Thumbnail source={icon_sync} />
+                </Left>
+                <Body>
+                    <Text>{ sale.name }</Text>
+                    <Text note> { sale.payment } </Text>
+                    <Text note> { sale.price } </Text>
+                </Body>
+                <Right>
+                    <Text note> { sale.date } </Text>
+                </Right>
+            </ListItem>
+            
         )
 
+    }
+
+    editar(sale){
+        Alert.alert('Editar venda')
     }
 }
 
