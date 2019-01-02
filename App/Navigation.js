@@ -1,6 +1,6 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import SaleScreen from './components/screens/SaleScreen';
-import EditSalesScreen from './components/screens/EditSalesScreen';
+import FormSalesScreen from './components/screens/FormSalesScreen';
 
 const optSales = { 
     screen: SaleScreen,
@@ -9,8 +9,8 @@ const optSales = {
     }
 } 
 
-const optEditSales = { 
-    screen: EditSalesScreen,
+const optFormSales = { 
+    screen: FormSalesScreen,
     navigationOptions:{
         title: 'Pedido'
     }
@@ -19,7 +19,7 @@ const optEditSales = {
 const AppNavigator = createStackNavigator(
     {
         Sales: optSales ,
-        EditSales: optEditSales,       
+        EditSales: optFormSales,       
     },
     {
         initialRouteName:'Sales'

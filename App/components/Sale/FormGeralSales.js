@@ -3,7 +3,7 @@ import { Card, CardItem, Body, Text, Item,
         Label, Button, Container,Picker, Content, DatePicker, Textarea } from 'native-base';
 import { StyleSheet } from 'react-native';
 
-class GeralEditSales extends Component{
+class FormGeraltSales extends Component{
     render(){
         return(
             <Container>
@@ -70,6 +70,7 @@ class GeralEditSales extends Component{
                         <Content>
                             <Label style={ styles.label }>Observações</Label>
                             <Textarea rowSpan={2} bordered placeholder="Observações " />
+                            
                         </Content>
                         </Body>
                     </CardItem>
@@ -100,4 +101,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default GeralEditSales;
+export default FormGeraltSales;
