@@ -7,5 +7,8 @@ export const NO_IMAGE = require('./images/no_image.png')
 
 
 export const COLORS = {
-    PRIMARY: '#1C1C4E'
+    PRIMARY: '#279BAA',
+    SECONDARY: '#1E7E8C',
+    THIRD:    '#014047',
+    FOURTH: '#1C1C4E'
 }

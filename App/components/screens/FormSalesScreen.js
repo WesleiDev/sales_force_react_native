@@ -15,23 +15,24 @@ class FormSalesScreen extends Component{
         return(
             
             <Container>
-                <ScrollView>
+                
                 <Tabs >
                     <Tab 
                         heading={ <TabHeading><Icon name="apps" /><Text>Geral</Text></TabHeading>}>
-                    <FormGeralSales/>
+                        <ScrollView>
+                            <FormGeralSales/>
+                        </ScrollView>
+                    
                     </Tab>
                     <Tab heading={ <TabHeading><Icon name="cart" /><Text>Produtos</Text></TabHeading>}>
                         <ItemSalesEdit/>
                     </Tab>
                 </Tabs>
-                </ScrollView>
-                
                 <View  style={styles.footer}>
                     <Text style={ styles.textFooter } >Total Pedido: R$300,00 Total Produtos: R$150,00</Text>     
                     <View style={ styles.buttonsFooter }>
-                        <Button danger style={ styles.button }><Text>Cancelar</Text></Button>
-                        <Button style={ styles.button }><Text>Salvar</Text></Button>
+                        <Button danger style={ styles.button } onPress={ ()=> this.props.navigation.navigate('Sales') }><Text>Cancelar</Text></Button>
+                        <Button style={ styles.button } ><Text>Salvar</Text></Button>
                     </View>             
                 </View>
             </Container>
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     button:{
-        height: 25,
+        height: 30,
         padding:5,
         width: '45%'
     }, buttonsFooter:{
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     },
     textFooter:{
         fontSize:15,
-        color: COLORS.PRIMARY
+        color: COLORS.FOURTH
     }
 })
 export default FormSalesScreen;
