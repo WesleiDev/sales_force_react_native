@@ -1,15 +1,38 @@
 import React, { Component } from 'react';
 import { Card, CardItem, Body, Text, Item, 
-        Label, Button, Container,Picker, Content, DatePicker, Textarea } from 'native-base';
-import { StyleSheet } from 'react-native';
+        Label, Button, Container,Picker, Content, DatePicker, Textarea, Grid, Col } from 'native-base';
+import { StyleSheet, View } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 
 class FormGeraltSales extends Component{
+
+    constructor(props){
+        super(props);
+        this.openSearchPerson = this.openSearchPerson.bind(this);
+        const clientSelected = {
+            id:'',
+            name: '',
+            cpf: '',
+            cnpj: '',
+            city:'',
+            state: '',
+            phone: ''
+        }
+        this.state = {clientSelected}
+    }
+
     render(){
+        const {clientSelected} = this.state;
+
         return(
             <Container>
+                <NavigationEvents 
+                    onDidFocus={payload => this.didFocusNavigation(payload)}
+            
+                />
                <Card>
                     <CardItem>
-                        <Body>
+                        <Content>
                             <DatePicker 
                                 locale="pr-BR"
                                 modalTransparent={false}
@@ -18,15 +41,21 @@ class FormGeraltSales extends Component{
                                 placeHolderText="Data do orçamento"
                                 placeHolderTextStyle={{ color: "#d3d3d3" }}
                             />   
-                            <Button style={{ width:'100%', marginBottom:10 }}>
+                            <Button style={{ width:'100%', marginBottom:10 }}
+                                onPress={ () => this.openSearchPerson() }
+                                >
                                 <Text>Selecione um cliente</Text>
                             </Button>
-                            <Label style ={ styles.text }>Cliente: </Label>
-                            <Label style ={ styles.text }>CPF/CNPJ:</Label>
-                            <Label style ={ styles.text }>Cidade/UF:</Label>
-                            <Label style ={ styles.text }>Fone:</Label>
+                            <Label style ={ styles.text }>Cliente: {clientSelected.name} </Label>
+                            <Label style ={ styles.text }>CPF/CNPJ:{ clientSelected.cnpj || clientSelected.cpf }  </Label>
+                            <Content>
+                                <Grid>
+                                    <Col ><Label style ={ styles.text }>Cidade/UF:{ clientSelected.city } - { clientSelected.state } </Label></Col>
+                                    <Col ><Label style ={ styles.text }>Fone:{ clientSelected.phone }</Label></Col>
+                                </Grid>
+                            </Content>
                             
-                        </Body>
+                        </Content>
                     </CardItem>
                 </Card> 
                 <Card>
@@ -79,6 +108,29 @@ class FormGeraltSales extends Component{
             
             
         )
+    }
+
+    openSearchPerson(){
+        const { navigate } = this.props.navigation;
+        navigate('Person')
+    }
+
+    didFocusNavigation(payload){
+        try{
+            let { clientSelected } = payload.state.params
+            console.log('Outro DID: ', payload)
+            if(clientSelected){
+                console.log('Cliente selecionado: ', clientSelected)
+                this.setState({
+                    clientSelected
+                })
+                console.log('STATE ATUAL: ',this.state)
+            }
+        }catch(e){
+
+        }
+        
+        
     }
 }
 

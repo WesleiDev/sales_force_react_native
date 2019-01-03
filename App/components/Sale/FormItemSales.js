@@ -15,7 +15,7 @@ class FormItemSales extends Component{
                         <Content>
                             <FlatList
                             data={ data }
-                            renderItem={ ({item}) => this.renderItem(item)  }
+                            renderItem={ ({item}) => this.renderItem(item)  }                            
                             >
                                 
                                 
@@ -26,13 +26,15 @@ class FormItemSales extends Component{
                 </Card>
                 </ScrollView>
              
-                {/* <FloatButton></FloatButton>  */}
+                <FloatButton onPress={ this.openAddProduct }></FloatButton> 
             </View>
             
             
         )
     }
-
+    openAddProduct(){
+        Alert.alert('Abrir consulta para adicionar produto')
+    }
     renderItem(item){
         const image = (item.img) ? item.img : NO_IMAGE;
 

@@ -20,7 +20,7 @@ class FormSalesScreen extends Component{
                     <Tab 
                         heading={ <TabHeading><Icon name="apps" /><Text>Geral</Text></TabHeading>}>
                         <ScrollView>
-                            <FormGeralSales/>
+                            <FormGeralSales navigation={ this.props.navigation } />
                         </ScrollView>
                     
                     </Tab>

@@ -41,7 +41,7 @@ export default class ListSalesComponent extends Component{
 
     editar(sale){
         const { navigation } = this.props;
-        navigation.navigate('EditSales')
+        navigation.navigate('FormSales')
         // console.log(this.props)
         //  Alert.alert('Editar venda')
     }

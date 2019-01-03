@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  ListSalesComponent  from '../Sale/ListSales';
 import {Container,  Content } from 'native-base'; 
+import FloatButton from '../utils/FloatButton';
 
 class SaleScreen extends Component{
 
@@ -8,7 +9,8 @@ class SaleScreen extends Component{
         title: 'Pedidos',
       };
     constructor(props){
-        super(props)
+        super(props);
+        this.openFormSales = this.openFormSales.bind(this)
     }
 
     render(){
@@ -17,9 +19,15 @@ class SaleScreen extends Component{
             <Content>
                 <ListSalesComponent navigation={ this.props.navigation }></ListSalesComponent>
             </Content>
+            <FloatButton onPress={ this.openFormSales}/>
         </Container>      
                           
         )
+    }
+
+    openFormSales(){
+        const { navigate } = this.props.navigation;
+        navigate('FormSales')
     }
 }
 
