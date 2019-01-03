@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList,  Alert } from 'react-native';
 import { ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';  
-import { ICON_SYNC }  from '../../contants';
+import { ICON_SYNC }  from '../../constants';
 
 export default class ListSalesComponent extends Component{
 

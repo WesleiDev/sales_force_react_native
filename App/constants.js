@@ -3,6 +3,8 @@ export const ICON_SYNC = {
     DESYNC: require('./images/icon_desync.png')
 };
 
+export const LOGO_INTERATIVA = require('./images/logo_interativa.png')
+
 export const NO_IMAGE = require('./images/no_image.png')
 
 

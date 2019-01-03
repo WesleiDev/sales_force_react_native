@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableHighlight, Alert } from 'react-native';
 import { Text, Icon } from 'native-base';
-import { COLORS } from '../../contants';
+import { COLORS } from '../../constants';
 
 class FloatButton extends Component{
     

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, TouchableHighlight, Alert} from 'react-native';
-import {Text, Container, ListItem, Body, Left, Rigth  } from 'native-base';
+import {Text, Container, ListItem, Body, Left, Rigth, Content  } from 'native-base';
 
 class ListPersonComponent extends Component{
     constructor(props){
@@ -11,14 +11,14 @@ class ListPersonComponent extends Component{
     render(){
         return(
             
-            <Container>
+            <Content>
                 <FlatList
                     data={ data }
                     renderItem ={ ({item}) => this.renderItem(item) }
                 >
                     
                 </FlatList>
-            </Container>
+            </Content>
        
         )
     }

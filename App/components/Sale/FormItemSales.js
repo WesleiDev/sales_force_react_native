@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, FlatList, TouchableHighlight, Alert} from 'react-native';
 import { Card, CardItem, Body, Text, ListItem, Left, Thumbnail, Content, Icon} from 'native-base';
-import {NO_IMAGE, COLORS} from '../../contants';
+import {NO_IMAGE, COLORS} from '../../constants';
 import FloatButton from '../utils/FloatButton';
 
 class FormItemSales extends Component{

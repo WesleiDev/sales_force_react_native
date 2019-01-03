@@ -3,7 +3,8 @@ import { View, StyleSheet, ScrollView } from 'react-native'
 import { Container, Text, Tab, Tabs, TabHeading, Icon, Button } from 'native-base';
 import  FormGeralSales  from '../Sale/FormGeralSales';
 import ItemSalesEdit from '../Sale/FormItemSales';
-import { COLORS } from '../../contants';
+import { COLORS } from '../../constants';
+import HeaderComponent from '../Header/HeaderComponent';
 
 class FormSalesScreen extends Component{
 
@@ -15,7 +16,10 @@ class FormSalesScreen extends Component{
         return(
             
             <Container>
-                
+                <HeaderComponent title="Pedido"
+                    navigation={ this.props.navigation }
+                    canBack
+                    />
                 <Tabs >
                     <Tab 
                         heading={ <TabHeading><Icon name="apps" /><Text>Geral</Text></TabHeading>}>
