@@ -13,6 +13,7 @@ class FormSalesScreen extends Component{
     }
 
     render(){
+        const { navigate } =this.props.navigation;
         return(
             
             <Container>
@@ -29,13 +30,13 @@ class FormSalesScreen extends Component{
                     
                     </Tab>
                     <Tab heading={ <TabHeading><Icon name="cart" /><Text>Produtos</Text></TabHeading>}>
-                        <ItemSalesEdit/>
+                        <ItemSalesEdit navigation={ this.props.navigation } />
                     </Tab>
                 </Tabs>
                 <View  style={styles.footer}>
                     <Text style={ styles.textFooter } >Total Pedido: R$300,00 Total Produtos: R$150,00</Text>     
                     <View style={ styles.buttonsFooter }>
-                        <Button danger style={ styles.button } onPress={ ()=> this.props.navigation.navigate('Sales') }><Text>Cancelar</Text></Button>
+                        <Button danger style={ styles.button } onPress={ ()=> navigate('Sales') }><Text>Cancelar</Text></Button>
                         <Button style={ styles.button } ><Text>Salvar</Text></Button>
                     </View>             
                 </View>

@@ -4,6 +4,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'nativ
 class HeaderComponent extends Component {
   constructor(props){
     super(props);    
+    console.log('PROPS HEADER: ', this.props)
   }
 
     render() {
@@ -39,7 +40,7 @@ class HeaderComponent extends Component {
           return(
             <Left>
               <Button transparent
-                onPress={ ()=> this.props.navigation.goBack() }
+                onPress={ ()=> this.props.navigation.goBack(null) }
               >
                 <Icon name='arrow-back' />
               </Button>

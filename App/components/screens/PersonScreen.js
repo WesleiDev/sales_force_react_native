@@ -5,14 +5,16 @@ import HeaderComponent from '../Header/HeaderComponent';
 
 class PersonScreen extends Component{
     constructor(props){
-        super(props)
+        super(props);
     }
 
     render(){
+        const go_back_key = this.props.navigation.getParam('go_back_key');
         return(
             <Container>
                 <HeaderComponent title="Clientes"
                     navigation={ this.props.navigation }
+                    canBack
                 />
                 <ListPersonComponent navigation={ this.props.navigation }/>
             </Container>           

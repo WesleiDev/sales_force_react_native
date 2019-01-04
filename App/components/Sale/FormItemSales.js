@@ -5,10 +5,14 @@ import {NO_IMAGE, COLORS} from '../../constants';
 import FloatButton from '../utils/FloatButton';
 
 class FormItemSales extends Component{
+    constructor(props){
+        super(props);
+
+        this.openAddProduct = this.openAddProduct.bind(this);
+    }
     render(){
         return(
-            <View>
-                 
+            <View>                 
                 <ScrollView>
                 <Card style={{ paddingBottom:50 }}>                   
                     <CardItem>
@@ -16,13 +20,11 @@ class FormItemSales extends Component{
                             <FlatList
                             data={ data }
                             renderItem={ ({item}) => this.renderItem(item)  }                            
-                            >
-                                
+                            >                               
                                 
                             </FlatList>
                         </Content>
-                    </CardItem>
-            
+                    </CardItem>            
                 </Card>
                 </ScrollView>
              
@@ -33,7 +35,9 @@ class FormItemSales extends Component{
         )
     }
     openAddProduct(){
-        Alert.alert('Abrir consulta para adicionar produto')
+        // Alert.alert('Abrir consulta para adicionar produto')
+        const {navigate} = this.props.navigation;
+        navigate('SearchProd');
     }
     renderItem(item){
         const image = (item.img) ? item.img : NO_IMAGE;

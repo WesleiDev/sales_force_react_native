@@ -1,18 +1,17 @@
-import { createStackNavigator, createAppContainer, createDrawerNavigator, 
-    DrawerItems, SafeAreaView } from 'react-navigation';
+import React from 'react';
+import { createAppContainer, createDrawerNavigator, createStackNavigator } from 'react-navigation';
+import SideBar from './SideBar'
 import SaleScreen from './components/screens/SaleScreen';
 import FormSalesScreen from './components/screens/FormSalesScreen';
 import PersonScreen from './components/screens/PersonScreen';
-import { ScrollView } from 'react-native';
-import React, { Component } from 'react';
-import { Container, Header, Content, Text} from 'native-base';
-import SideBar from './SideBar'
+import SearchProdScreen from './components/screens/SearchProdScreen';
 
 
 const optSales = { 
     screen: SaleScreen,
     navigationOptions:{
-        title: 'Pedidos'
+        title: 'Pedidos',
+        header: null
     }
 }
 
@@ -20,17 +19,34 @@ const optSales = {
 const optFormSales = { 
     screen: FormSalesScreen,
     navigationOptions:{
-        title: 'Pedido'
+        title: 'Pedido',
+        header: null
+    }
+} 
+
+const optSearchProd = { 
+    screen: SearchProdScreen,
+    navigationOptions:{
+        title: 'Consulta de Produtos',
+        header: null
     }
 } 
 
 const optPerson = {
     screen:PersonScreen,
     navigationOptions:{
-        title: 'Cliente'
+        title: 'Cliente',
+        header: null
     } 
 }
 
+const menuStack = createStackNavigator({
+    Sales: optSales ,
+    FormSales: optFormSales, 
+    Person: optPerson, 
+    SearchProd: optSearchProd 
+    }
+)
 
 
 const CustomDrawerContentComponent = (props) => (
@@ -39,15 +55,15 @@ const CustomDrawerContentComponent = (props) => (
 
 const AppNavigator = createDrawerNavigator(
     {
-        Sales: optSales ,
-        FormSales: optFormSales, 
-        Person: optPerson      
+        menuStack   
     },
     {
-        initialRouteName:'Sales',
         contentComponent : CustomDrawerContentComponent,
         useNativeAnimations: true,
-        drawerLockMode: "unlocked"
+        drawerOpenRoute: 'DrawerOpen',
+        drawerCloseRoute: 'DrawerClose',
+        drawerToggleRoute: 'DrawerToggle',
+        headerMode: 'none',
 
     }
   )
