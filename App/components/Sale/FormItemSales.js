@@ -19,7 +19,8 @@ class FormItemSales extends Component{
                         <Content>
                             <FlatList
                             data={ data }
-                            renderItem={ ({item}) => this.renderItem(item)  }                            
+                            renderItem={ ({item}) => this.renderItem(item)  } 
+                            keyExtractor= { (item) => item.id }                           
                             >                               
                                 
                             </FlatList>

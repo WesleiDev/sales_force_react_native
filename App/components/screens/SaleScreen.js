@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import  ListSalesComponent  from '../Sale/ListSales';
 import {Container,  Content, Text, Drawer, Button, Icon } from 'native-base'; 
 import FloatButton from '../utils/FloatButton';
-import SideBar from '../../SideBar'
 import HeaderComponent from '../Header/HeaderComponent';
 
 
@@ -18,8 +17,8 @@ class SaleScreen extends Component{
       };
       openDrawer(){
         //   this.drawer._root.open()
-         console.log('THIS: ', this.props.navigation)
-          this.props.navigation.openDrawer();
+        //  console.log('THIS: ', this.props.navigation)
+          this.props.navigations
         // Alert.alert('ABRIR')
       };
 

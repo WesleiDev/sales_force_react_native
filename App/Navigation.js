@@ -1,6 +1,6 @@
 import React from 'react';
 import { createAppContainer, createDrawerNavigator, createStackNavigator } from 'react-navigation';
-import SideBar from './SideBar'
+import SideBar from '../App/components/SideBar'
 import SaleScreen from './components/screens/SaleScreen';
 import FormSalesScreen from './components/screens/FormSalesScreen';
 import PersonScreen from './components/screens/PersonScreen';

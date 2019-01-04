@@ -21,7 +21,7 @@ class FormSalesScreen extends Component{
                     navigation={ this.props.navigation }
                     canBack
                     />
-                <Tabs >
+                <Tabs>
                     <Tab 
                         heading={ <TabHeading><Icon name="apps" /><Text>Geral</Text></TabHeading>}>
                         <ScrollView>

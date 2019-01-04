@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import { COLORS } from '../../constants'
 
 class HeaderComponent extends Component {
   constructor(props){
@@ -10,7 +11,9 @@ class HeaderComponent extends Component {
     render() {
       const {title} = this.props;
       return (     
-          <Header>
+          <Header
+            
+          >
             { this.buttonGoBack() }
             <Body>
               <Title>{ title }</Title>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View,  ScrollView, FlatList,  Alert, StyleSheet, Image} from 'react-native';
 import { DrawerItems, SafeAreaView } from 'react-navigation';
-import { Container, Header, Content, Text, ListItem, Icon, Right, Body, Label } from 'native-base';
-import { COLORS, LOGO_INTERATIVA } from './constants';
+import { Container, Text, ListItem, Icon, Right, Body, Label } from 'native-base';
+import { COLORS, LOGO_INTERATIVA } from '../constants';
 
 
 class SideBar extends Component{
