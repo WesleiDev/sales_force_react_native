@@ -43,7 +43,7 @@ class ListSearchProd extends Component{
                     <Text style={ styles.text }>Ref: { item.ref }</Text>
                     <Text style={ styles.text }>{item.name}</Text>
                     <View style={ styles.content }>
-                        <View><Text  style={ styles.text }>Estoque: { item.stock }</Text></View>
+                        <View style={{ flex:1 }}><Text  style={ styles.text }>Estoque: { item.stock }</Text></View>
                         <View style={ styles.contentButtons }>                                
                             <Button transparent style={ styles.button } iconLeft>
                                 <Icon
@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
         right: 0,
         alignContent: 'center',
         height: 26,
-        width: 35,
         paddingRight: 8
     },
     button:{
@@ -102,7 +101,7 @@ const styles = StyleSheet.create({
         padding: 0
     },
     inuppQtd:{
-        //   backgroundColor: 'blue',
+        // backgroundColor: 'blue',
         height: '100%',  
         fontSize: 16,
         paddingBottom:0,
@@ -110,7 +109,8 @@ const styles = StyleSheet.create({
         borderColor: 'red',
         textAlign: 'right',
         color: '#737373',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        width:20
     },
     text:{
         fontSize: 15,
