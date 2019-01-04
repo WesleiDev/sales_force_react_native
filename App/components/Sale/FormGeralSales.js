@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardItem, Body, Text, Item, 
+import { Card, CardItem, Body, Text, Icon,
         Label, Button, Container,Picker, Content, DatePicker, Textarea, Grid, Col } from 'native-base';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 
 class FormGeraltSales extends Component{
@@ -45,6 +45,7 @@ class FormGeraltSales extends Component{
                                 onPress={ () => this.openSearchPerson() }
                                 >
                                 <Text>Selecione um cliente</Text>
+                                <Icon name="search"/>
                             </Button>
                             <Label style ={ styles.text }>Cliente: {clientSelected.name} </Label>
                             <Label style ={ styles.text }>CPF/CNPJ:{ clientSelected.cnpj || clientSelected.cpf }  </Label>

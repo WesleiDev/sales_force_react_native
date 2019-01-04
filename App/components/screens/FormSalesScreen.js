@@ -37,7 +37,9 @@ class FormSalesScreen extends Component{
                     <Text style={ styles.textFooter } >Total Pedido: R$300,00 Total Produtos: R$150,00</Text>     
                     <View style={ styles.buttonsFooter }>
                         <Button danger style={ styles.button } onPress={ ()=> navigate('Sales') }><Text>Cancelar</Text></Button>
-                        <Button style={ styles.button } ><Text>Salvar</Text></Button>
+                        <Button style={ styles.button } >
+                            <Text>Salvar</Text>
+                        </Button>
                     </View>             
                 </View>
             </Container>

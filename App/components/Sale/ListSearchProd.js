@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
-import { Content, Text, List, ListItem, Body, Right, 
+import { FlatList, StyleSheet, View , ScrollView} from 'react-native';
+import { Content, Text,  ListItem, Body, Item, 
     Left, Thumbnail, CheckBox, Icon, Button, Input } from 'native-base';
 import { NO_IMAGE, COLORS } from '../../constants'
 
@@ -11,14 +11,22 @@ class ListSearchProd extends Component{
 
     render(){
         return(
-            <Content >
-                <Input placeholder="Consultar..."/>
+            <View >
+                <View style={ styles.search }>
+                    <Item >
+                        <Input placeholder='Consultar...'/>
+                        <Icon active name='search' />
+                    </Item>
+                </View>
+                <ScrollView>
                 <FlatList style={ styles.contentList }
                     data={ data }
                     renderItem={ ({item}) => this.renderItem(item) }
                     keyExtractor={ item=> item.id }
                 />
-            </Content>
+                </ScrollView>
+                
+            </View>
         )
     }
 
@@ -68,6 +76,7 @@ export default ListSearchProd;
 const styles = StyleSheet.create({
     contentList:{
         paddingBottom: 60,
+        top: 50
     },
     checkbox:{
         left: 20
@@ -106,6 +115,13 @@ const styles = StyleSheet.create({
     text:{
         fontSize: 15,
         color: COLORS.FOURTH
+    },
+    search:{
+        position: 'absolute',
+        zIndex: 50,
+        top:0,
+        width: '100%',
+        backgroundColor: '#e6e6e6'
     }
     
 
